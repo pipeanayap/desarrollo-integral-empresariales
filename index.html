@@ -3,9 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todas mis practicast</title>
+    <title>Todas mis prácticas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Mis prácticas</h1>
+
+        <div class="button-container">
+            <a href="./Practicas/index.html">
+                <button>Práctica 1</button>
+            </a>
+            <a href="./Practica2/index.html">
+                <button>Práctica 2</button>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
