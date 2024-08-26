@@ -1,0 +1,41 @@
+"use strict";
+let normalx = 'hola';
+normalx = 10;
+normalx = true;
+let usuario = 21;
+console.log(normalx);
+let value;
+console.log(value);
+//Hola mundo 
+value = true;
+value = 10;
+value = 'hola';
+value = [];
+value = {};
+value = Math.random;
+value = null;
+value = undefined;
+console.log(value);
+let myValue;
+console.log('Tipo desconocido cawn', myValue);
+const edad = 18;
+console.log("edad", edad);
+console.log('edad: ', edad);
+const sueldo = 1.234;
+const total = Number('5678'); //CAST 
+console.log(sueldo);
+console.log(total);
+const personaje = "el chavo";
+const otroPersonaje = "Jirafales";
+const otroMas = `Profesor jirafales y ${personaje}`;
+console.log(otroMas);
+const heroe = 'deadpool\'s house';
+console.log(heroe);
+console.log(heroe.toUpperCase());
+let vengador;
+vengador = 'Dr. strange';
+console.log(vengador.charAt(0));
+vengador = 150.55;
+console.log(vengador.toFixed(1)); //el uno representa cuantos decimales queremos despues del punto
+console.log(vengador.toFixed(1));
+console.log(vengador.toFixed(1));
