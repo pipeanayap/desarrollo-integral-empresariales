@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica 3</title>
+    <title>Practica 4</title>
+    
+    <script src="./js/index.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -66,31 +70,44 @@
     </style>
 </head>
 <body>
-    <div class="top-left-button">
-        <a href="../index.html">
+     <div class="top-left-button">
+         <a href="../index.html">
             <button>Menu</button>
         </a>
     </div>
-    <div>
-        <h1>Practica 3</h1>
-    </div>
-    <div>
-        <h5>Lista 1</h5>
-        <p id="listaNumeros"></p>
-    </div>
-    <div>
-        <h5>Lista 2</h5>
-        <p id="listaNumeros2"></p>
-    </div>
-    <div class="container">
-        <figure id="figura1">
-            <!-- Aquí se insertará la primera imagen y su caption -->
-        </figure>
-        <figure id="figura2">
-            <!-- Aquí se insertará la segunda imagen y su caption -->
-        </figure>
-    </div>
 
-    <script src="./js/index.js"></script>
+    <div style="margin-bottom: 50px;">
+        <h1>Practica 4</h1>
+    </div> 
+
+    <div>
+        <canvas id="fibonacciChart" width="750" height="550"></canvas>
+      </div>
+
+    <script>
+        const ctx = document.getElementById('fibonacciChart');
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: fibonacci,
+            datasets: [{
+              label: fibonacci,
+              data: fibonacci,
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+    </script>
+
+    
+    
 </body>
 </html>
