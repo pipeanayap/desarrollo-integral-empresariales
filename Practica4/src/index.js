@@ -26,3 +26,14 @@ const person = {
 let nombreX = person.firstName;
 let { firstName, lastName, age } = person;
 console.log(firstName, lastName, age);
+function fibonacciSeries(n) {
+    let series = [0, 1];
+    for (let i = 2; i < n; i++) {
+        let nextNumber = series[i - 1] + series[i - 2];
+        series.push(nextNumber);
+    }
+    return series;
+}
+let n = 25;
+let fibonacci = fibonacciSeries(n);
+console.log(fibonacci);
