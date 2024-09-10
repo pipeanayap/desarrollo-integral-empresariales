@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todas mis prácticas</title>
+    <title>Practica 5</title>
+    
+    <script src="./js/index.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -28,21 +32,31 @@
             text-align: center;
         }
 
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        figure {
+            margin: 20px;
         }
 
-        a {
-            text-decoration: none;
+        img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        figcaption {
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .top-left-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
         }
 
         button {
-            background-color: #3498db;
+            background-color: #2c3e50;
             color: #fff;
             border: none;
-            padding: 15px 30px;
+            padding: 10px 25px;
             font-size: 1.2rem;
             border-radius: 8px;
             cursor: pointer;
@@ -50,33 +64,22 @@
         }
 
         button:hover {
-            background-color: #2980b9;
+            background-color: #19222c;
             transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Mis prácticas</h1>
-
-        <div class="button-container">
-            <a href="./Practica1/index.html">
-                <button>Práctica 1</button>
-            </a>
-            <a href="./Practica2/index.html">
-                <button>Práctica 2</button>
-            </a>
-            <a href="Practica3/index.html">
-                <button>Práctica 3</button>
-            </a>
-            <a href="Practica4/index.html">
-                <button>Práctica 4</button>
-            </a>
-            <a href="Practica5/index.html">
-                <button>Práctica 5</button>
-            </a>
-            
-        </div>
+     <div class="top-left-button">
+         <a href="../index.html">
+            <button>Menu</button>
+        </a>
     </div>
+
+    <div style="margin-bottom: 50px;">
+        <h1>Practica 5</h1>
+    </div> 
+
+    
 </body>
 </html>
