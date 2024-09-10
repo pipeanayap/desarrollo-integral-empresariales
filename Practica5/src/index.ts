@@ -124,5 +124,64 @@ console.log(usuarioInterface.name, usuarioInterface.id);
 
 //IGNORAR POR AHORA
 
+class animal { 
+   nombre : string;
+   constructor(nombre : string){
+      this.nombre = nombre;
+   }
+
+   mover(distancia : number = 0){
+      console.log(`${this.nombre} se ha movido ${distancia} metros`)
+   }
+
+   hacerSonido(sonido : string = 'sin sonido'){
+      console.log(`${this.nombre} hace ${sonido}`);
+   }
+}
+
+let animal1 = new animal('Grillo');
+animal1.mover(5);
+animal1.hacerSonido('cri cri cri')
 
 
+class perro extends animal { 
+
+   raza : string;
+   constructor(nombre : string, raza : string){
+      super(nombre);
+      this.raza = raza;
+   }
+
+   hacerSonido(sonido = 'Ladrido'): void {
+         console.log(`${this.nombre} hace ${sonido}`);
+   }
+
+   mover(distancia : number = 0){
+      console.log(`${this.nombre} se ha movido ${distancia} metros`);
+   }
+}
+
+let perro1 = new perro("Kira", 'Golden retriever');
+perro1.hacerSonido('Guau guau');
+perro1.mover(10);
+
+
+class serpiente extends animal{
+   constructor(nombre : string){
+      super(nombre);
+   }
+
+   mover(distancia : number = 1){
+      console.log('reptando');
+      super.mover(distancia);
+   }
+
+   hacerSonido(sonido = 'siseo'){
+      console.log(`${this.nombre} hace ${sonido}`);
+   }
+       
+   }
+
+   const serpiente1 = new serpiente('cobra');
+   serpiente1.mover(2);
+   serpiente1.hacerSonido();
