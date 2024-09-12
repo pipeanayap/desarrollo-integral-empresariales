@@ -123,3 +123,133 @@ class serpiente extends animal {
 const serpiente1 = new serpiente('cobra');
 serpiente1.mover(2);
 serpiente1.hacerSonido();
+//RETO PRACTICA 5
+console.log("------Aqui inicia la practica 5-------");
+// Clase Padre
+class Persona {
+    // Constructor
+    constructor(nombre, email, telefono) {
+        this.nombre = nombre;
+        this.email = email;
+        this.telefono = telefono;
+    }
+    // Getters y Setters
+    getNombre() {
+        return this.nombre;
+    }
+    setNombre(nombre) {
+        this.nombre = nombre;
+    }
+    getEmail() {
+        return this.email;
+    }
+    setEmail(email) {
+        this.email = email;
+    }
+    getTelefono() {
+        return this.telefono;
+    }
+    setTelefono(telefono) {
+        this.telefono = telefono;
+    }
+}
+// Clase Hija - Usuario
+class Usuario extends Persona {
+    constructor(nombre, email, telefono, username, password, rol) {
+        super(nombre, email, telefono);
+        this.username = username;
+        this.password = password;
+        this.rol = rol;
+    }
+    getUsername() {
+        return this.username;
+    }
+    setUsername(username) {
+        this.username = username;
+    }
+    getRol() {
+        return this.rol;
+    }
+    setRol(rol) {
+        this.rol = rol;
+    }
+    checkPassword(password) {
+        return this.password === password;
+    }
+}
+// Clase Productos
+class Producto {
+    constructor(nombre, precio, stock) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
+    getNombre() {
+        return this.nombre;
+    }
+    setNombre(nombre) {
+        this.nombre = nombre;
+    }
+    getPrecio() {
+        return this.precio;
+    }
+    setPrecio(precio) {
+        this.precio = precio;
+    }
+    getStock() {
+        return this.stock;
+    }
+    setStock(stock) {
+        this.stock = stock;
+    }
+    comprar(cantidad) {
+        if (this.stock >= cantidad) {
+            this.stock -= cantidad;
+        }
+        else {
+            console.log('Stock insuficiente');
+        }
+    }
+}
+// Clase Carrito
+class Carrito {
+    constructor() {
+        this.productos = [];
+        this.total = 0;
+        this.cantidadProductos = 0;
+    }
+    getTotal() {
+        return this.total;
+    }
+    getCantidadProductos() {
+        return this.cantidadProductos;
+    }
+    agregarProducto(producto) {
+        this.productos.push(producto);
+        this.total += producto.getPrecio();
+        this.cantidadProductos++;
+    }
+    mostrarProductos() {
+        console.log(this.productos);
+    }
+}
+// Clase MetodoDePago
+class MetodoDePago {
+    constructor(tipo, numeroCuenta, titular) {
+        this.tipo = tipo;
+        this.numeroCuenta = numeroCuenta;
+        this.titular = titular;
+    }
+    getTipo() {
+        return this.tipo;
+    }
+    getNumeroCuenta() {
+        return this.numeroCuenta;
+    }
+    getTitular() {
+        return this.titular;
+    }
+    procesarPago(monto) {
+        console.log(`Procesando pago de ${monto} con el método ${this.tipo} a nombre de ${this.titular}`);
+    }
+}

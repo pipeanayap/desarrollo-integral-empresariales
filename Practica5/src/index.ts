@@ -185,3 +185,186 @@ class serpiente extends animal{
    const serpiente1 = new serpiente('cobra');
    serpiente1.mover(2);
    serpiente1.hacerSonido();
+
+
+
+
+
+   
+
+
+   //RETO PRACTICA 5
+   console.log("------Aqui inicia la practica 5-------")
+
+   // Clase Padre
+class Persona {
+    nombre: string;
+    email: string;
+   telefono: string;
+
+   // Constructor
+   constructor(nombre: string, email: string, telefono: string) {
+       this.nombre = nombre;
+       this.email = email;
+       this.telefono = telefono;
+   }
+
+   // Getters y Setters
+ getNombre(): string {
+       return this.nombre;
+   }
+
+ setNombre(nombre: string): void {
+       this.nombre = nombre;
+   }
+
+ getEmail(): string {
+       return this.email;
+   }
+
+ setEmail(email: string): void {
+       this.email = email;
+   }
+
+ getTelefono(): string {
+       return this.telefono;
+   }
+
+ setTelefono(telefono: string): void {
+       this.telefono = telefono;
+   }
+}
+
+// Clase Hija - Usuario
+class Usuario extends Persona {
+    username: string;
+    password: string;
+    rol: string;
+
+   constructor(nombre: string, email: string, telefono: string, username: string, password: string, rol: string) {
+       super(nombre, email, telefono);
+       this.username = username;
+       this.password = password;
+       this.rol = rol;
+   }
+
+   public getUsername(): string {
+       return this.username;
+   }
+
+   public setUsername(username: string): void {
+       this.username = username;
+   }
+
+   public getRol(): string {
+       return this.rol;
+   }
+
+   public setRol(rol: string): void {
+       this.rol = rol;
+   }
+
+   public checkPassword(password: string): boolean {
+       return this.password === password;
+   }
+}
+
+// Clase Productos
+class Producto {
+    nombre: string;
+    precio: number;
+    stock: number;
+
+   constructor(nombre: string, precio: number, stock: number) {
+       this.nombre = nombre;
+       this.precio = precio;
+       this.stock = stock;
+   }
+
+ getNombre(): string {
+       return this.nombre;
+   }
+
+ setNombre(nombre: string): void {
+       this.nombre = nombre;
+   }
+
+ getPrecio(): number {
+       return this.precio;
+   }
+
+ setPrecio(precio: number): void {
+       this.precio = precio;
+   }
+
+ getStock(): number {
+       return this.stock;
+   }
+
+ setStock(stock: number): void {
+       this.stock = stock;
+   }
+
+ comprar(cantidad: number): void {
+       if (this.stock >= cantidad) {
+           this.stock -= cantidad;
+       } else {
+           console.log('Stock insuficiente');
+       }
+   }
+}
+
+// Clase Carrito
+class Carrito {
+    productos: Producto[] = [];
+ total: number;
+    cantidadProductos: number;
+
+   constructor() {
+       this.total = 0;
+       this.cantidadProductos = 0;
+   }
+ getTotal(): number {
+       return this.total;
+   }
+ getCantidadProductos(): number {
+       return this.cantidadProductos;
+   }
+ agregarProducto(producto: Producto): void {
+       this.productos.push(producto);
+       this.total += producto.getPrecio();
+       this.cantidadProductos++;
+   }
+ mostrarProductos(): void {
+       console.log(this.productos);
+   }
+}
+
+// Clase MetodoDePago
+class MetodoDePago {
+    tipo: string;
+    numeroCuenta: string;
+    titular: string;
+
+   constructor(tipo: string, numeroCuenta: string, titular: string) {
+       this.tipo = tipo;
+       this.numeroCuenta = numeroCuenta;
+       this.titular = titular;
+   }
+
+    getTipo(): string {
+       return this.tipo;
+   }
+
+    getNumeroCuenta(): string {
+       return this.numeroCuenta;
+   }
+
+    getTitular(): string {
+       return this.titular;
+   }
+
+    procesarPago(monto: number): void {
+       console.log(`Procesando pago de ${monto} con el método ${this.tipo} a nombre de ${this.titular}`);
+   }
+}
